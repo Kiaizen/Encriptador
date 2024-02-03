@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a19055a8cd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <title>Decodificador</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section>
+        <img class="logo" src="Frame 6.svg" alt="Vogal a" />
+        <div class="textarea">
+          <textarea
+            id="texto"
+            name="text"
+            class="text"
+            placeholder="Digite seu texto"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <div class="content">
+            <div class="content__paragraf">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <p>Apenas letras minúsculas e sem acento.</p>
+            </div>
+            <div class="content__btn">
+              <button id="cripto" class="btn" onclick="bCripto()" disabled>Criptografar</button>
+              <button id="decripto" class="btn" onclick="bDcripto()" disabled>
+                Descriptografar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar" class="output">
+          <img
+            class="imgside"
+            src="High quality products 1 1.svg"
+            alt="Pessoa com uma lupa olando para um diamante"
+          />
+          <div class="sidebar__text">
+            <strong>Nenhuma mensagem encontrada</strong>
+            <p>
+              Digite um texto que você deseja criptografar ou descriptografar.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
