@@ -216,7 +216,7 @@ section {
 
 .sidebar__textcript{
   height: 725px;
-  width: 300px;
+  width: 330px;
   color: #343A40;
   font-family: "Inter";
   font-size: 24px;
@@ -234,6 +234,7 @@ section {
   color: #0A3871;
   font-size: 16px;
   font-family: "Inter";
+  display: none;
 }
 
 .btn__side:hover {

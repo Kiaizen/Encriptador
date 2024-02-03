@@ -37,7 +37,7 @@
               <p>Apenas letras minúsculas e sem acento.</p>
             </div>
             <div class="content__btn">
-              <button id="cripto" class="btn" onclick="bCripto()" disabled>Criptografar</button>
+              <button id="cripto" class="btn" onclick="encriptar()" disabled>Criptografar</button>
               <button id="decripto" class="btn" onclick="bDcripto()" disabled>
                 Descriptografar
               </button>
@@ -48,7 +48,7 @@
           <img
             class="imgside"
             src="High quality products 1 1.svg"
-            alt="Pessoa com uma lupa olando para um diamante"
+            alt="Pessoa com uma lupa olhando para um diamante"
           />
           <div class="sidebar__text">
             <strong>Nenhuma mensagem encontrada</strong>
@@ -56,6 +56,7 @@
               Digite um texto que você deseja criptografar ou descriptografar.
             </p>
           </div>
+          <button id="copyBtn" class="btn__side" onclick="bCopy()">Copiar</button>
         </div>
       </section>
     </main>

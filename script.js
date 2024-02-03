@@ -1,40 +1,45 @@
-let sidebar = document.getElementById("sidebar");
-
-let cripto = document.getElementById("cripto");
-
-let decripto = document.getElementById("decripto");
-
-let enableCript = document.getElementById("texto");
-
-let copyBtn = document.getElementById("copyBtn");
+// Elementos da DOM
+const sidebar = document.getElementById("sidebar");
+const cripto = document.getElementById("cripto");
+const decripto = document.getElementById("decripto");
+const enableCript = document.getElementById("texto");
+const copyBtn = document.getElementById("copyBtn");
 
 let resultadoCriptografar;
-
 let resultadoDecripto;
 
-
-
+// Event Listener para mudança de entrada
 enableCript.addEventListener("input", function () {
   cripto.disabled = enableCript.value.trim() === "";
   decripto.disabled = enableCript.value.trim() === "";
 });
 
- function bCripto() {
-  let texto = document.getElementById("texto");
-  let valor = texto.value;
-  resultadoCriptografar = criptografar(valor);
-  sidebar.innerHTML = `<div class="sidebar__textcript"><p>${resultadoCriptografar}</p></div><button id="copyBtn" class="btn__side" onclick="bCopy()">Copiar</button>
- `;
-};
+// Função de encriptar
+function encriptar() {
+  let texto = document.getElementById("texto").value;
+  let paragrafo = sidebar.querySelector("p");
+  let imagem = sidebar.querySelector("img");
+  let strong = sidebar.querySelector("strong");
+  let button = sidebar.querySelector("button");
+  let div = sidebar.querySelector("div");
+  div.classList.remove("sidebar__text");
+  div.classList.add("sidebar__textcript");
+  button.style.display = "block";
+  strong.style.display = "none";
+  imagem.style.display = "none";
+  resultadoCriptografar = criptografar(texto);
+  paragrafo.textContent = resultadoCriptografar;
+}
 
+// Função de Descriptografar
 function bDcripto() {
-  let texto = document.getElementById("texto");
-  let valor = texto.value;
-  resultadoDecripto = descriptografar(valor);
-  sidebar.innerHTML = `<div class="sidebar__textcript"><p>${resultadoDecripto}</p></div><button id="copyBtn" class="btn__side" onclick="bCopy()">Copiar</button>
- `;
-};
+  let texto = document.getElementById("texto").value;
+  resultadoDecripto = descriptografar(texto);
+  let paragrafo = sidebar.querySelector("p");
+  paragrafo.textContent = resultadoDecripto;
+}
 
+// Lógica de criptografar
 function criptografar(vogal) {
   let txt = Array.from(vogal.toLowerCase());
 
@@ -64,15 +69,17 @@ function criptografar(vogal) {
   return resultado;
 }
 
-function descriptografar(vogal) {
-  vogal =vogal.replace(/enter/g, 'e');
-  vogal =vogal.replace(/imes/g, 'i');
-  vogal =vogal.replace(/ai/g, 'a');
-  vogal =vogal.replace(/ober/g, 'o');
-  vogal =vogal.replace(/ufat/g, 'u');
-  return vogal
+// Lógica de descriptografar
+function descriptografar(cripto) {
+  cripto = cripto.replace(/enter/g, "e");
+  cripto = cripto.replace(/imes/g, "i");
+  cripto = cripto.replace(/ai/g, "a");
+  cripto = cripto.replace(/ober/g, "o");
+  cripto = cripto.replace(/ufat/g, "u");
+  return cripto;
 }
 
+// Copiar para área de transferência
 function bCopy() {
-    navigator.clipboard.writeText(resultadoCriptografar)
+  navigator.clipboard.writeText(resultadoCriptografar);
 }
